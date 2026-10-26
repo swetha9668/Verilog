@@ -1,17 +1,7 @@
-// 2:1 mux, gate level
-module mux_2_1 (input i0, i1, s, output y);
-    wire a, b, c;
-    not(a, s);
-    and(b, a, i0);
-    and(c, s, i1);
-    or(y, c, b);
-endmodule
-
-// 16:1 mux built from fifteen 2:1 muxes
-module mux_16_1 (input [15:0] i, input s3, s2, s1, s0, output y);
-    wire [7:0] l1;
-    wire [3:0] l2;   
-    wire [1:0] l3;  
+module mux_16_1_using_2_1 (input [15:0] i, input s3, s2, s1, s0, output y);
+    wire [7:0] l1;   // level 1 outputs
+    wire [3:0] l2;   // level 2 outputs
+    wire [1:0] l3;   // level 3 outputs
 
     // Level 1: 8 muxes, select = s0
     mux_2_1 m1_0(i[0],  i[1],  s0, l1[0]);
