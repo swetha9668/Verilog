@@ -1,0 +1,72 @@
+$date
+	Mon Oct 26 19:08:34 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_bcd_adder $end
+$var wire 4 ! Sum [3:0] $end
+$var wire 1 " Cout $end
+$var reg 4 # A [3:0] $end
+$var reg 4 $ B [3:0] $end
+$var reg 1 % Cin $end
+$scope module uut $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var wire 1 % Cin $end
+$var wire 1 " Cout $end
+$var wire 5 ( temp_sum [4:0] $end
+$var wire 1 ) correction $end
+$var wire 4 * Sum [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b111 *
+0)
+b111 (
+b100 '
+b11 &
+0%
+b100 $
+b11 #
+0"
+b111 !
+$end
+#10
+b10 !
+b10 *
+b101 $
+b101 '
+1"
+1)
+b1100 (
+b111 #
+b111 &
+#20
+b1000 !
+b1000 *
+b1001 $
+b1001 '
+b10010 (
+b1001 #
+b1001 &
+#30
+b0 !
+b0 *
+1%
+1"
+1)
+b1 $
+b1 '
+b1010 (
+b1000 #
+b1000 &
+#40
