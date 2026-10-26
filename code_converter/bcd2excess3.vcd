@@ -1,0 +1,135 @@
+$date
+	Mon Oct 26 18:02:54 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_bcd2excess3 $end
+$var wire 1 ! e3 $end
+$var wire 1 " e2 $end
+$var wire 1 # e1 $end
+$var wire 1 $ e0 $end
+$var reg 1 % b0 $end
+$var reg 1 & b1 $end
+$var reg 1 ' b2 $end
+$var reg 1 ( b3 $end
+$scope module dut $end
+$var wire 1 % b0 $end
+$var wire 1 ) b0n $end
+$var wire 1 & b1 $end
+$var wire 1 * b1n $end
+$var wire 1 ' b2 $end
+$var wire 1 + b2n $end
+$var wire 1 ( b3 $end
+$var wire 1 $ e0 $end
+$var wire 1 # e1 $end
+$var wire 1 " e2 $end
+$var wire 1 ! e3 $end
+$var wire 1 , t1 $end
+$var wire 1 - t2 $end
+$var wire 1 . t3 $end
+$var wire 1 / t4 $end
+$var wire 1 0 t5 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+00
+0/
+0.
+0-
+0,
+1+
+1*
+1)
+0(
+0'
+0&
+0%
+1$
+1#
+0"
+0!
+$end
+#10
+1"
+0)
+1,
+1/
+0#
+0$
+1%
+#20
+0*
+1.
+1)
+0/
+1$
+1&
+0%
+#30
+0)
+1/
+1#
+0$
+1%
+#40
+0+
+10
+1*
+0.
+1)
+0,
+0/
+1$
+1'
+0&
+0%
+#50
+0"
+1!
+00
+1-
+0)
+1,
+0#
+0$
+1%
+#60
+0*
+1)
+1$
+1&
+0%
+#70
+0)
+1#
+0$
+1%
+#80
+1+
+0-
+1*
+1)
+0,
+1$
+1(
+0'
+0&
+0%
+#90
+1"
+0)
+1,
+1/
+0#
+0$
+1%
+#100
