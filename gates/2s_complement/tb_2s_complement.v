@@ -2,7 +2,7 @@ module tb_2s_complement;
     reg [3:0]a;
     wire [3:0]y;
 
-    2s_complement dut(
+    complement_2s dut(
         .a(a),
         .y(y)
     );
