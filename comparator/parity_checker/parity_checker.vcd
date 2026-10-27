@@ -1,0 +1,47 @@
+$date
+	Mon Oct 26 19:36:17 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_parity_checker $end
+$var wire 1 ! odd_err $end
+$var wire 1 " even_err $end
+$var reg 4 # data [3:0] $end
+$var reg 1 $ parity_bit $end
+$scope module dut $end
+$var wire 4 % data [3:0] $end
+$var wire 1 " even_err $end
+$var wire 1 $ parity_bit $end
+$var wire 1 ! odd_err $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 %
+1$
+b1 #
+1"
+0!
+$end
+#10
+0$
+0!
+b11 #
+b11 %
+#20
+1$
+0!
+b10 #
+b10 %
+#30
+b111 #
+b111 %
+#40
