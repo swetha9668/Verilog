@@ -1,7 +1,12 @@
-module rand_gen (input clk, output reg signed [8:0]r);
-  integer seed;
-  initial seed = 12345;
- 
-  always @(posedge clk)
-    r <= ({$random(seed)} % 201) - 100;
+module random_num;
+  integer i;
+  integer r;
+
+  initial begin
+    for (i = 0; i < 10; i = i + 1) begin
+      r = ($urandom % 201) - 100;   
+      $display("i=%0d  r=%0d", i, r);
+    end
+    $finish;
+  end
 endmodule
