@@ -1,47 +1,61 @@
 module tb_adder3;
-    reg  [3:0] A, B;
-    reg        CIN;
-    wire [3:0] SUM;
-    wire       COUT;
 
-    adder3 dut (A, B, CIN, SUM, COUT);
+  // 8-bit adder
+  reg  [7:0] A8, B8;
+  reg        CIN8;
+  wire [7:0] SUM8;
+  wire       COUT8;
+  adder3 #(.N(8)) dut8 (A8, B8, CIN8, SUM8, COUT8);
 
-    initial begin
-        $dumpfile("adder3.vcd");
-        $dumpvars(0, tb_adder3);
+  // 16-bit adder
+  reg  [15:0] A16, B16;
+  reg         CIN16;
+  wire [15:0] SUM16;
+  wire        COUT16;
+  adder3 #(.N(16)) dut16 (A16, B16, CIN16, SUM16, COUT16);
 
-        $monitor("A=%b B=%b CIN=%b | COUT=%b SUM=%b", A, B, CIN, COUT, SUM);
+  initial begin
+    $dumpfile("adder3.vcd");
+    $dumpvars(0, tb_adder3);
 
-        A = 4'b0000; B = 4'b0000; CIN = 0; #10;
-        A = 4'b0011; B = 4'b0010; CIN = 0; #10;
-        A = 4'b0111; B = 4'b0001; CIN = 0; #10;
-        A = 4'b1010; B = 4'b0101; CIN = 0; #10;
-        A = 4'b1111; B = 4'b0001; CIN = 0; #10;
-        A = 4'b1111; B = 4'b1111; CIN = 1; #10;
+    $display("===== 8-bit adder (N = 8) =====");
 
-        $finish;
-    end
-endmodulemodule tb_adder3;
-    reg  [3:0] A, B;
-    reg        CIN;
-    wire [3:0] SUM;
-    wire       COUT;
+    A8 = 8'd10;  B8 = 8'd20;  CIN8 = 0;
+    $strobe("8-bit : %3d + %3d + %b  ->  COUT=%b SUM=%3d", A8, B8, CIN8, COUT8, SUM8);
+    #10;
+    A8 = 8'd100; B8 = 8'd27;  CIN8 = 1;
+    $strobe("8-bit : %3d + %3d + %b  ->  COUT=%b SUM=%3d", A8, B8, CIN8, COUT8, SUM8);
+    #10;
+    A8 = 8'd200; B8 = 8'd100; CIN8 = 0;
+    $strobe("8-bit : %3d + %3d + %b  ->  COUT=%b SUM=%3d", A8, B8, CIN8, COUT8, SUM8);
+    #10;
+    A8 = 8'd255; B8 = 8'd1;   CIN8 = 0;
+    $strobe("8-bit : %3d + %3d + %b  ->  COUT=%b SUM=%3d", A8, B8, CIN8, COUT8, SUM8);
+    #10;
+    A8 = 8'd255; B8 = 8'd255; CIN8 = 1;
+    $strobe("8-bit : %3d + %3d + %b  ->  COUT=%b SUM=%3d", A8, B8, CIN8, COUT8, SUM8);
+    #10;
 
-    adder3 dut (A, B, CIN, SUM, COUT);
+    $display("");
+    $display("===== 16-bit adder (N = 16) =====");
 
-    initial begin
-        $dumpfile("adder3.vcd");
-        $dumpvars(0, tb_adder3);
+    A16 = 16'd1000;  B16 = 16'd2000;  CIN16 = 0;
+    $strobe("16-bit: %5d + %5d + %b  ->  COUT=%b SUM=%5d", A16, B16, CIN16, COUT16, SUM16);
+    #10;
+    A16 = 16'd30000; B16 = 16'd30000; CIN16 = 0;
+    $strobe("16-bit: %5d + %5d + %b  ->  COUT=%b SUM=%5d", A16, B16, CIN16, COUT16, SUM16);
+    #10;
+    A16 = 16'd40000; B16 = 16'd30000; CIN16 = 0;
+    $strobe("16-bit: %5d + %5d + %b  ->  COUT=%b SUM=%5d", A16, B16, CIN16, COUT16, SUM16);
+    #10;
+    A16 = 16'd65535; B16 = 16'd1;     CIN16 = 0;
+    $strobe("16-bit: %5d + %5d + %b  ->  COUT=%b SUM=%5d", A16, B16, CIN16, COUT16, SUM16);
+    #10;
+    A16 = 16'd65535; B16 = 16'd65535; CIN16 = 1;
+    $strobe("16-bit: %5d + %5d + %b  ->  COUT=%b SUM=%5d", A16, B16, CIN16, COUT16, SUM16);
+    #10;
 
-        $monitor("A=%b B=%b CIN=%b | COUT=%b SUM=%b", A, B, CIN, COUT, SUM);
+    $finish;
+  end
 
-        A = 4'b0000; B = 4'b0000; CIN = 0; #10;
-        A = 4'b0011; B = 4'b0010; CIN = 0; #10;
-        A = 4'b0111; B = 4'b0001; CIN = 0; #10;
-        A = 4'b1010; B = 4'b0101; CIN = 0; #10;
-        A = 4'b1111; B = 4'b0001; CIN = 0; #10;
-        A = 4'b1111; B = 4'b1111; CIN = 1; #10;
-
-        $finish;
-    end
 endmodule

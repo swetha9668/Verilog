@@ -1,0 +1,128 @@
+$date
+	Fri Nov 13 05:09:40 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_adder3 $end
+$var wire 8 ! SUM8 [7:0] $end
+$var wire 16 " SUM16 [15:0] $end
+$var wire 1 # COUT8 $end
+$var wire 1 $ COUT16 $end
+$var reg 16 % A16 [15:0] $end
+$var reg 8 & A8 [7:0] $end
+$var reg 16 ' B16 [15:0] $end
+$var reg 8 ( B8 [7:0] $end
+$var reg 1 ) CIN16 $end
+$var reg 1 * CIN8 $end
+$scope module dut16 $end
+$var wire 16 + A [15:0] $end
+$var wire 16 , B [15:0] $end
+$var wire 1 ) CIN $end
+$var wire 16 - SUM [15:0] $end
+$var wire 1 $ COUT $end
+$var parameter 32 . N $end
+$upscope $end
+$scope module dut8 $end
+$var wire 8 / A [7:0] $end
+$var wire 8 0 B [7:0] $end
+$var wire 1 * CIN $end
+$var wire 8 1 SUM [7:0] $end
+$var wire 1 # COUT $end
+$var parameter 32 2 N $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1000 2
+b10000 .
+$end
+#0
+$dumpvars
+b11110 1
+b10100 0
+b1010 /
+bx -
+bx ,
+bx +
+0*
+x)
+b10100 (
+bx '
+b1010 &
+bx %
+x$
+0#
+bx "
+b11110 !
+$end
+#10
+b10000000 !
+b10000000 1
+1*
+b11011 (
+b11011 0
+b1100100 &
+b1100100 /
+#20
+1#
+b101100 !
+b101100 1
+0*
+b1100100 (
+b1100100 0
+b11001000 &
+b11001000 /
+#30
+b0 !
+b0 1
+b1 (
+b1 0
+b11111111 &
+b11111111 /
+#40
+b11111111 !
+b11111111 1
+1*
+b11111111 (
+b11111111 0
+#50
+b101110111000 "
+b101110111000 -
+0$
+0)
+b11111010000 '
+b11111010000 ,
+b1111101000 %
+b1111101000 +
+#60
+b1110101001100000 "
+b1110101001100000 -
+b111010100110000 '
+b111010100110000 ,
+b111010100110000 %
+b111010100110000 +
+#70
+b1000101110000 "
+b1000101110000 -
+1$
+b1001110001000000 %
+b1001110001000000 +
+#80
+b0 "
+b0 -
+b1 '
+b1 ,
+b1111111111111111 %
+b1111111111111111 +
+#90
+b1111111111111111 "
+b1111111111111111 -
+1)
+b1111111111111111 '
+b1111111111111111 ,
+#100
